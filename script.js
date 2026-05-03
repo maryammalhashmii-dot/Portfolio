@@ -113,10 +113,12 @@ link.classList.add("active-link");
 
 /* ==================================================
 ABOUT STOP-MOTION IMAGE SEQUENCE
-This cycles through the three images continuously.
-It does not depend on scrolling, so it is more reliable.
+Cycles through standing, starting jump, and jumped images.
 ================================================== */
+const aboutSectionElement = document.querySelector("#about");
 const jumpFrames = document.querySelectorAll(".jump-frame");
+
+let aboutSequenceStarted = false;
 let currentJumpFrame = 0;
 
 function showJumpFrame(index) {
@@ -129,13 +131,33 @@ jumpFrames[index].classList.add("active");
 }
 }
 
-if (jumpFrames.length > 0) {
+function startAboutSequence() {
+if (aboutSequenceStarted) return;
+aboutSequenceStarted = true;
+
 showJumpFrame(0);
 
 setInterval(function () {
 currentJumpFrame = (currentJumpFrame + 1) % jumpFrames.length;
 showJumpFrame(currentJumpFrame);
-}, 260);
+}, 380);
+}
+
+if (aboutSectionElement && jumpFrames.length > 0) {
+const aboutSequenceObserver = new IntersectionObserver(
+function (entries) {
+entries.forEach(function (entry) {
+if (entry.isIntersecting) {
+startAboutSequence();
+}
+});
+},
+{
+threshold: 0.35
+}
+);
+
+aboutSequenceObserver.observe(aboutSectionElement);
 }
 
 /* ==================================================
@@ -233,19 +255,6 @@ countUpNumbers();
 }
 });
 }
-
-window.addEventListener("load", function () {
-const aboutSection = document.querySelector("#about");
-
-if (aboutSection) {
-const aboutPosition = aboutSection.getBoundingClientRect().top;
-
-if (aboutPosition < window.innerHeight) {
-countUpNumbers();
-}
-}
-});
-
 
 /* ==================================================
 MESSAGE BOX CHARACTER COUNTER
