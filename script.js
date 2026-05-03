@@ -113,12 +113,10 @@ link.classList.add("active-link");
 
 /* ==================================================
 ABOUT STOP-MOTION IMAGE SEQUENCE
-Cycles through standing, starting jump, and jumped images.
+This cycles through the three images continuously.
+It does not depend on scrolling, so it is more reliable.
 ================================================== */
-const aboutSectionElement = document.querySelector("#about");
 const jumpFrames = document.querySelectorAll(".jump-frame");
-
-let aboutSequenceStarted = false;
 let currentJumpFrame = 0;
 
 function showJumpFrame(index) {
@@ -131,33 +129,13 @@ jumpFrames[index].classList.add("active");
 }
 }
 
-function startAboutSequence() {
-if (aboutSequenceStarted) return;
-aboutSequenceStarted = true;
-
+if (jumpFrames.length > 0) {
 showJumpFrame(0);
 
 setInterval(function () {
 currentJumpFrame = (currentJumpFrame + 1) % jumpFrames.length;
 showJumpFrame(currentJumpFrame);
-}, 380);
-}
-
-if (aboutSectionElement && jumpFrames.length > 0) {
-const aboutSequenceObserver = new IntersectionObserver(
-function (entries) {
-entries.forEach(function (entry) {
-if (entry.isIntersecting) {
-startAboutSequence();
-}
-});
-},
-{
-threshold: 0.35
-}
-);
-
-aboutSequenceObserver.observe(aboutSectionElement);
+}, 260);
 }
 
 /* ==================================================
@@ -256,6 +234,100 @@ countUpNumbers();
 });
 }
 
+window.addEventListener("load", function () {
+const aboutSection = document.querySelector("#about");
+
+if (aboutSection) {
+const aboutPosition = aboutSection.getBoundingClientRect().top;
+
+if (aboutPosition < window.innerHeight) {
+countUpNumbers();
+}
+}
+});
+
+
 /* ==================================================
 MESSAGE BOX CHARACTER COUNTER
-Shows how many characters are t
+Shows how many characters are typed in the message.
+================================================== */
+const messageInput = document.querySelector("#message");
+const characterCount = document.querySelector("#character-count");
+const formStatus = document.querySelector("#form-status");
+
+if (messageInput && characterCount) {
+messageInput.addEventListener("input", function () {
+characterCount.textContent = messageInput.value.length + " / 220";
+
+if (messageInput.value.length > 0) {
+formStatus.textContent = "Message is looking good ✦";
+} else {
+formStatus.textContent = "Message ready when you are ✦";
+}
+});
+}
+
+/* ==================================================
+CONTACT FORM
+Opens an email draft to Maryam when the form is submitted.
+================================================== */
+const messageForm = document.querySelector("#message-form");
+
+if (messageForm) {
+messageForm.addEventListener("submit", function (event) {
+event.preventDefault();
+
+const name = document.querySelector("#name").value.trim();
+const email = document.querySelector("#email").value.trim();
+const message = document.querySelector("#message").value.trim();
+
+const subject = "Portfolio Message from " + name;
+
+const body =
+"Name: " + name + "\n" +
+"Email: " + email + "\n\n" +
+"Message:\n" + message;
+
+formStatus.textContent = "Opening your email app now ✦";
+
+setTimeout(function () {
+window.location.href =
+"mailto:maryammalhashmii@gmail.com?subject=" +
+encodeURIComponent(subject) +
+"&body=" +
+encodeURIComponent(body);
+}, 400);
+});
+}
+
+/* ==================================================
+MOBILE MENU
+Opens and closes the mobile navigation dropdown.
+================================================== */
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector("nav");
+const navMenuLinks = document.querySelectorAll("nav a");
+
+if (menuToggle && navMenu) {
+menuToggle.addEventListener("click", function () {
+navMenu.classList.toggle("open");
+
+if (navMenu.classList.contains("open")) {
+menuToggle.textContent = "×";
+} else {
+menuToggle.textContent = "☰";
+}
+});
+}
+
+navMenuLinks.forEach(function (link) {
+link.addEventListener("click", function () {
+if (navMenu) {
+navMenu.classList.remove("open");
+}
+
+if (menuToggle) {
+menuToggle.textContent = "☰";
+}
+});
+});
