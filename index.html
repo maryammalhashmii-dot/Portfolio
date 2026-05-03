@@ -56,7 +56,7 @@
 <h1>Designing digital stories through design, code, and interaction.</h1>
 
 <p>
-Hi, I’m Maryam. I’m 18 years old.This portfolio brings together my Communications Lab projects,
+Hi, I’m Maryam. I’m 18 years old. This portfolio brings together my Communications Lab projects,
 creative experiments, and the skills I developed throughout the class.
 </p>
 
@@ -312,4 +312,42 @@ class="connect-soft-photo"
 />
 
 <!-- Contact links -->
-<di
+<div class="connect-card reveal">
+<p>
+I’m always open to sharing ideas, collaborating on creative projects,
+or connecting about web design, storytelling, and interactive media.
+</p>
+
+<div class="connect-links">
+<a href="mailto:maryammalhashmii@gmail.com">Email Me</a>
+<a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a href="https://github.com/maryammalhashmii-dot" target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+</div>
+
+<!-- Message form opens an email draft -->
+<form class="message-box reveal" id="message-form">
+<input id="name" type="text" placeholder="Your name" required />
+<input id="email" type="email" placeholder="Your email" required />
+<textarea id="message" maxlength="220" placeholder="Write your message here" required></textarea>
+
+<div class="message-footer">
+<p id="character-count">0 / 220</p>
+<p id="form-status">Message ready when you are ✦</p>
+</div>
+
+<button id="send-message" type="submit">Send Message</button>
+</form>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<p>Designed and coded by Maryam Alhashmi ✦</p>
+</footer>
+
+<!-- Main JS file -->
+<script src="script.js"></script>
+</body>
+</html>
