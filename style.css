@@ -206,9 +206,10 @@ color: var(--bow-red);
 }
 
 /* Scroll reveal for smaller elements */
+/* Content is visible by default so the website never becomes blank */
 .reveal {
-opacity: 0;
-transform: translateY(35px);
+opacity: 1;
+transform: translateY(0);
 transition: 0.8s ease;
 }
 
