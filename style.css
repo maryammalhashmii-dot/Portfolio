@@ -218,9 +218,10 @@ transform: translateY(0);
 }
 
 /* Scroll reveal for full sections */
+/* Sections are visible by default so the website never looks blank */
 .section-panel {
-opacity: 0;
-transform: translateY(45px);
+opacity: 1;
+transform: translateY(0);
 transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
