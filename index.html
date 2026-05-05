@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Main CSS file -->
-<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css?v=8" />
 </head>
 
 <body>
@@ -53,10 +53,10 @@
 <div class="hero-text reveal">
 <p class="tag">Creative Web Portfolio</p>
 
-<h1>Designing digital stories through design, code, and interaction.</h1>
+<h1>Designing digital stories through sound, code, and interaction.</h1>
 
 <p>
-Hi, I’m Maryam. I’m 18 years old. This portfolio brings together my Communications Lab projects,
+Hi, I’m Maryam. This portfolio brings together my Communications Lab projects,
 creative experiments, and the skills I developed throughout the class.
 </p>
 
@@ -103,11 +103,22 @@ HTML • CSS • JavaScript • Canva • Procreate • After Effects • Video 
 <!-- About text -->
 <div class="about-text reveal">
 <p>
-  I’m Maryam Alhashmi, a student at NYU Abu Dhabi, pursuing Economics, Concentration 
-  in finance and a minor in interactive media, with strong interest in creative media,
-  design, technology, and storytelling. I like working on projects that mix visuals,
-  interaction, and personality, whether that is through a website, a video, a poster,
-  or a digital story.
+I’m Maryam Alhashmi, a student at NYU Abu Dhabi with an interest in creative media,
+design, technology, and storytelling. I like working on projects that mix visuals,
+interaction, and personality, whether that is through a website, a video, a poster,
+or a digital story.
+</p>
+
+<p>
+My skills are a mix of technical and creative tools. I enjoy both the logical side
+of building something and the creative side of making it feel personal, polished,
+and expressive.
+</p>
+
+<p>
+This portfolio shows the work I created in Communications Lab, but it also shows my
+style. I wanted it to feel warm, playful, and personal instead of looking like a plain
+portfolio template.
 </p>
 
 <div class="stats">
@@ -118,7 +129,8 @@ HTML • CSS • JavaScript • Canva • Procreate • After Effects • Video 
 
 <div>
 <h3 data-target="5">0</h3>
-<p>Sections</p>
+<p>Website Sections</p>
+<span>Home • About • Skills • Projects • Connect</span>
 </div>
 
 <div>
@@ -132,62 +144,45 @@ HTML • CSS • JavaScript • Canva • Procreate • After Effects • Video 
 </section>
 
 <!-- SKILLS SECTION -->
-<section id="skills" class="section-panel">
+<section id="skills" class="section-panel compact-skills">
 <h2 class="reveal">Skills</h2>
 
-<div class="skills-showcase">
+<div class="skills-grid skills-grid-compact">
 
-<!-- Skills based on CV-style categories -->
-<div class="skills-grid">
-
-<div class="skill-card reveal">
-<h3>Technical</h3>
-<p>
-HTML, CSS, JavaScript, C++, MATLAB, and Python.
-</p>
+<div class="skill-card reveal" data-icon="&lt;/&gt;">
+<div class="skill-icon">&lt;/&gt;</div>
+<h3>Web</h3>
+<p>HTML, CSS, JavaScript, responsive layout, and interaction design.</p>
 </div>
 
-<div class="skill-card reveal">
+<div class="skill-card reveal" data-icon="⚙">
+<div class="skill-icon">⚙</div>
+<h3>Programming</h3>
+<p>C++, MATLAB, Python, logic building, and problem solving.</p>
+</div>
+
+<div class="skill-card reveal" data-icon="✎">
+<div class="skill-icon">✎</div>
 <h3>Design</h3>
-<p>
-Canva, Procreate, Adobe After Effects, Video Star, and CapCut.
-</p>
+<p>Canva, Procreate, poster design, branding, and campaign visuals.</p>
 </div>
 
-<div class="skill-card reveal">
+<div class="skill-card reveal" data-icon="🎬">
+<div class="skill-icon">🎬</div>
+<h3>Media</h3>
+<p>Adobe After Effects, Video Star, CapCut, and video editing.</p>
+</div>
+
+<div class="skill-card reveal" data-icon="☁">
+<div class="skill-icon">☁</div>
 <h3>Tools</h3>
-<p>
-GitHub, Microsoft Office, web layout, project presentation, and organization.
-</p>
+<p>GitHub, Microsoft Office, project presentation, and organization.</p>
 </div>
 
-<div class="skill-card reveal">
-<h3>Creative Media</h3>
-<p>
-Poster design, branding materials, campaign visuals, and video editing.
-</p>
-</div>
-
-<div class="skill-card reveal">
-<h3>Storytelling</h3>
-<p>
-Visual storytelling, sound-based narratives, and interactive media projects.
-</p>
-</div>
-
-<div class="skill-card reveal">
+<div class="skill-card reveal" data-icon="ع">
+<div class="skill-icon">ع</div>
 <h3>Languages</h3>
-<p>
-Arabic native speaker and fluent English speaker.
-</p>
-</div>
-
-</div>
-
-<!-- Decorative image for the skills section -->
-<div class="detail-photo reveal">
-<img src="Maryams%20photos/detail-touch.png" alt="Close-up detail photo">
-<p>Small details, big personality.</p>
+<p>Arabic native speaker and fluent English speaker.</p>
 </div>
 
 </div>
@@ -206,16 +201,22 @@ class="project-card reveal active-project"
 href="https://maryammalhashmii-dot.github.io/Assignment1/"
 target="_blank"
 rel="noopener noreferrer"
-data-title="Assignment One"
-data-type="First Web Assignment"
-data-tools="HTML, CSS, Layout"
-data-description="My first web assignment, where I started experimenting with HTML, CSS, layout, and visual structure."
+data-title="30MFF"
+data-type="30 Minute Film Festival"
+data-tools="HTML, CSS, Video, Storytelling"
+data-description="A fast-paced first web assignment built around the 30MFF idea, combining video, layout, and a simple web presentation."
 >
+<img class="project-preview" src="Maryams%20photos/project-30mff.png" alt="30MFF project preview">
+
 <div>
 <p class="project-label">Communications Lab</p>
-<h3>Assignment One</h3>
+<h3>30MFF</h3>
 </div>
-<p>My first web assignment, where I started experimenting with HTML, CSS, layout, and visual structure.</p>
+
+<p>
+A 30 Minute Film Festival project presented as a simple web experience.
+</p>
+
 <span>Open Project ↗</span>
 </a>
 
@@ -224,16 +225,22 @@ class="project-card reveal"
 href="https://asemaikauas.github.io/fcomics/comic.html"
 target="_blank"
 rel="noopener noreferrer"
-data-title="Comic Project"
-data-type="Visual Storytelling"
-data-tools="HTML, CSS, Narrative Design"
-data-description="A visual storytelling project that uses web design to guide the viewer through a comic-style experience."
+data-title="Interactive Comic"
+data-type="Comic Storytelling Project"
+data-tools="HTML, CSS, Visual Storytelling"
+data-description="An interactive comic project that uses web layout, images, and navigation to guide the viewer through a visual story."
 >
+<img class="project-preview" src="Maryams%20photos/project-comic.png" alt="Interactive comic project preview">
+
 <div>
 <p class="project-label">Communications Lab</p>
-<h3>Comic Project</h3>
+<h3>Interactive Comic</h3>
 </div>
-<p>A visual storytelling project that uses web design to guide the viewer through a comic-style experience.</p>
+
+<p>
+A visual storytelling project that guides the viewer through a comic-style experience.
+</p>
+
 <span>Open Project ↗</span>
 </a>
 
@@ -242,16 +249,22 @@ class="project-card reveal"
 href="https://kzeina.github.io/sounds_commslab/index.html"
 target="_blank"
 rel="noopener noreferrer"
-data-title="Sound Project"
-data-type="Audio Storytelling"
+data-title="Sound Story"
+data-type="Sound Project"
 data-tools="Sound Design, Web Design, Storytelling"
-data-description="A sound-based web project focused on atmosphere, audio editing, and storytelling through listening."
+data-description="A sound-based web project focused on atmosphere, listening, audio editing, and storytelling through sound."
 >
+<img class="project-preview" src="Maryams%20photos/project-sound.png" alt="Sound project preview">
+
 <div>
 <p class="project-label">Communications Lab</p>
-<h3>Sound Project</h3>
+<h3>Sound Story</h3>
 </div>
-<p>A sound-based web project focused on atmosphere, audio editing, and storytelling through listening.</p>
+
+<p>
+A sound-based experience focused on atmosphere, audio editing, and listening.
+</p>
+
 <span>Open Project ↗</span>
 </a>
 
@@ -260,16 +273,22 @@ class="project-card reveal"
 href="https://alw1nmathew.github.io/VideoCommsLab/#story"
 target="_blank"
 rel="noopener noreferrer"
-data-title="Video Project"
-data-type="Video Storytelling"
+data-title="Faiza the Falcon"
+data-type="Video Storytelling Project"
 data-tools="Video Editing, Web Presentation, Narrative"
-data-description="A video-based storytelling project combining visuals, narrative, editing, and interactive web presentation."
+data-description="A video-based storytelling project about Faiza the Falcon, combining narrative, editing, and web presentation."
 >
+<img class="project-preview" src="Maryams%20photos/project-video.png" alt="Faiza the Falcon project preview">
+
 <div>
 <p class="project-label">Communications Lab</p>
-<h3>Video Project</h3>
+<h3>Faiza the Falcon</h3>
 </div>
-<p>A video-based storytelling project combining visuals, narrative, editing, and interactive web presentation.</p>
+
+<p>
+A video storytelling project combining narrative, editing, and web presentation.
+</p>
+
 <span>Open Project ↗</span>
 </a>
 
@@ -278,16 +297,16 @@ data-description="A video-based storytelling project combining visuals, narrativ
 <!-- Project spotlight updates when hovering over project cards -->
 <aside class="project-spotlight reveal">
 <p class="spotlight-label">Project Spotlight</p>
-<h3 id="spotlight-title">Assignment One</h3>
-<p id="spotlight-type">First Web Assignment</p>
+<h3 id="spotlight-title">30MFF</h3>
+<p id="spotlight-type">30 Minute Film Festival</p>
 
 <div class="spotlight-line"></div>
 
 <p id="spotlight-description">
-My first web assignment, where I started experimenting with HTML, CSS, layout, and visual structure.
+A fast-paced first web assignment built around the 30MFF idea, combining video, layout, and a simple web presentation.
 </p>
 
-<p class="spotlight-tools">Tools: <span id="spotlight-tools">HTML, CSS, Layout</span></p>
+<p class="spotlight-tools">Tools: <span id="spotlight-tools">HTML, CSS, Video, Storytelling</span></p>
 
 <div class="spotlight-orbit">
 <span></span>
@@ -349,6 +368,6 @@ or connecting about web design, storytelling, and interactive media.
 </footer>
 
 <!-- Main JS file -->
-<script src="script.js"></script>
+<script src="script.js?v=8"></script>
 </body>
 </html>
