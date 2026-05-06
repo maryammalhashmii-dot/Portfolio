@@ -4,7 +4,10 @@ MARYAM ALHASHMI PORTFOLIO - FINAL JAVASCRIPT
 
 document.addEventListener("DOMContentLoaded", function () {
 
-/* Custom cursor + interactive background */
+/* ==================================================
+CUSTOM CURSOR + INTERACTIVE BACKGROUND
+================================================== */
+
 const blob = document.querySelector(".cursor-blob");
 
 document.addEventListener("mousemove", function (event) {
@@ -17,9 +20,8 @@ blob.style.top = event.clientY + "px";
 }
 });
 
-/* Cursor grow effect */
 const hoverItems = document.querySelectorAll(
-"a, button, input, textarea, .project-card, .skill-card, .connect-card, .message-box, .project-spotlight, .stopmotion-stage, .hero-photo"
+"a, button, input, textarea, .project-card, .skill-card, .connect-card, .message-box, .project-spotlight, .stopmotion-stage, .hero-photo, .skill-visual-panel"
 );
 
 hoverItems.forEach(function (item) {
@@ -36,7 +38,63 @@ blob.classList.remove("grow");
 });
 });
 
-/* Stop-motion About animation */
+/* ==================================================
+SCROLL REVEAL EFFECT
+================================================== */
+
+const revealElements = document.querySelectorAll(".reveal");
+const sectionPanels = document.querySelectorAll(".section-panel");
+
+const revealObserver = new IntersectionObserver(
+function (entries) {
+entries.forEach(function (entry) {
+if (entry.isIntersecting) {
+entry.target.classList.add("show");
+}
+});
+},
+{
+threshold: 0.15
+}
+);
+
+revealElements.forEach(function (element) {
+revealObserver.observe(element);
+});
+
+const sectionObserver = new IntersectionObserver(
+function (entries) {
+entries.forEach(function (entry) {
+if (entry.isIntersecting) {
+entry.target.classList.add("section-visible");
+}
+});
+},
+{
+threshold: 0.12
+}
+);
+
+sectionPanels.forEach(function (section) {
+sectionObserver.observe(section);
+});
+
+const homeSection = document.querySelector("#home");
+
+if (homeSection) {
+homeSection.classList.add("section-visible");
+
+const homeRevealItems = homeSection.querySelectorAll(".reveal");
+
+homeRevealItems.forEach(function (item) {
+item.classList.add("show");
+});
+}
+
+/* ==================================================
+STOP-MOTION ABOUT ANIMATION
+================================================== */
+
 const jumpFrames = document.querySelectorAll(".jump-frame");
 let currentJumpFrame = 0;
 
@@ -59,7 +117,27 @@ showJumpFrame(currentJumpFrame);
 }, 260);
 }
 
-/* Project card 3D tilt */
+/* ==================================================
+SKILLS DETAIL IMAGE TEXT
+================================================== */
+
+const skillCards = document.querySelectorAll(".skill-card");
+const skillVisualTitle = document.querySelector("#skill-visual-title");
+const skillVisualNote = document.querySelector("#skill-visual-note");
+
+skillCards.forEach(function (card) {
+card.addEventListener("mouseenter", function () {
+if (skillVisualTitle && skillVisualNote) {
+skillVisualTitle.textContent = card.dataset.skillTitle;
+skillVisualNote.textContent = card.dataset.skillNote;
+}
+});
+});
+
+/* ==================================================
+PROJECT CARD 3D TILT
+================================================== */
+
 const projectCards = document.querySelectorAll(".project-card");
 
 projectCards.forEach(function (card) {
@@ -83,7 +161,10 @@ card.style.transform = "rotateX(0deg) rotateY(0deg)";
 });
 });
 
-/* Project spotlight */
+/* ==================================================
+PROJECT SPOTLIGHT
+================================================== */
+
 const spotlightTitle = document.querySelector("#spotlight-title");
 const spotlightType = document.querySelector("#spotlight-type");
 const spotlightDescription = document.querySelector("#spotlight-description");
@@ -106,7 +187,10 @@ spotlightTools.textContent = card.dataset.tools;
 });
 });
 
-/* Count-up numbers */
+/* ==================================================
+COUNT-UP NUMBERS
+================================================== */
+
 const numbers = document.querySelectorAll("[data-target]");
 let counted = false;
 
@@ -158,7 +242,10 @@ countUpNumbers();
 }
 });
 
-/* Message box character counter */
+/* ==================================================
+MESSAGE FORM CHARACTER COUNTER
+================================================== */
+
 const messageInput = document.querySelector("#message");
 const characterCount = document.querySelector("#character-count");
 const formStatus = document.querySelector("#form-status");
@@ -177,7 +264,10 @@ formStatus.textContent = "Message ready when you are ✦";
 });
 }
 
-/* Contact form mailto */
+/* ==================================================
+CONTACT FORM MAILTO
+================================================== */
+
 const messageForm = document.querySelector("#message-form");
 
 if (messageForm) {
@@ -209,7 +299,10 @@ encodeURIComponent(body);
 });
 }
 
-/* Mobile menu */
+/* ==================================================
+MOBILE MENU
+================================================== */
+
 const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector("nav");
 const navMenuLinks = document.querySelectorAll("nav a");
