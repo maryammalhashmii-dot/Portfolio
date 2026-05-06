@@ -529,23 +529,24 @@ box-shadow: 10px 10px 0 rgba(207, 47, 60, 0.35);
 
 .skill-icon {
 position: absolute;
-right: 22px;
+right: 20px;
 top: 18px;
-font-size: 42px;
+font-size: 32px;
 font-weight: 800;
 color: rgba(207, 47, 60, 0.35);
 transition: 0.35s;
+line-height: 1;
 }
 
 .skill-card:hover .skill-icon {
 color: var(--blush);
-transform: scale(1.25) rotate(-8deg);
+transform: scale(1.12) rotate(-6deg);
 }
 
 .skill-card h3 {
-font-size: 23px;
-margin-bottom: 10px;
-padding-right: 65px;
+font-size: 25px;
+margin-bottom: 12px;
+padding-right: 48px;
 }
 
 .skill-card p {
