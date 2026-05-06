@@ -7,20 +7,20 @@
 
 <title>Maryam Alhashmi Portfolio</title>
 
-<!-- Website tab icon / favicon -->
+<!-- Website tab icon -->
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Main CSS file -->
-<link rel="stylesheet" href="style.css?v=9" />
+<!-- CSS file -->
+<link rel="stylesheet" href="style.css?v=10" />
 </head>
 
 <body>
 
-<!-- Soft background decorations -->
+<!-- Background decorations -->
 <div class="interactive-bg">
 <span class="bg-dot dot-one"></span>
 <span class="bg-dot dot-two"></span>
@@ -29,14 +29,13 @@
 <span class="bg-star star-two">✦</span>
 </div>
 
-<!-- Custom cursor blob for desktop -->
+<!-- Custom cursor blob -->
 <div class="cursor-blob"></div>
 
 <!-- Header / navigation -->
 <header>
 <h2>Maryam Alhashmi ✦</h2>
 
-<!-- Mobile menu button -->
 <button class="menu-toggle" aria-label="Open menu">☰</button>
 
 <nav>
@@ -66,7 +65,6 @@ creative experiments, and the skills I developed throughout the class.
 </div>
 </div>
 
-<!-- Main hero image -->
 <div class="hero-photo reveal">
 <div class="hero-photo-frame">
 <img src="Maryams%20photos/hero-camera.png" alt="Maryam holding a camera">
@@ -91,7 +89,6 @@ HTML • CSS • JavaScript • Canva • Procreate • After Effects • Video 
 
 <div class="about-grid">
 
-<!-- Stop-motion image animation -->
 <div class="about-animation reveal">
 <div class="stopmotion-stage">
 <img src="Maryams%20photos/stand.png" alt="Maryam standing" class="jump-frame frame-1 active">
@@ -100,7 +97,6 @@ HTML • CSS • JavaScript • Canva • Procreate • After Effects • Video 
 </div>
 </div>
 
-<!-- About text -->
 <div class="about-text reveal">
 <p>
 I’m Maryam Alhashmi, a student at NYU Abu Dhabi with an interest in creative media,
@@ -147,42 +143,55 @@ portfolio template.
 <section id="skills" class="section-panel compact-skills">
 <h2 class="reveal">Skills</h2>
 
+<div class="skills-layout">
+
 <div class="skills-grid skills-grid-compact">
 
-<div class="skill-card reveal" data-icon="&lt;/&gt;">
+<div class="skill-card reveal" data-skill-title="Web" data-skill-note="I used HTML, CSS, and JavaScript to build the full portfolio website.">
 <div class="skill-icon">&lt;/&gt;</div>
 <h3>Web</h3>
 <p>HTML, CSS, JavaScript, responsive layout, and interaction design.</p>
 </div>
 
-<div class="skill-card reveal" data-icon="⚙">
+<div class="skill-card reveal" data-skill-title="Programming" data-skill-note="I have experience with C++, MATLAB, and Python from my technical work.">
 <div class="skill-icon">⚙</div>
 <h3>Programming</h3>
 <p>C++, MATLAB, Python, logic building, and problem solving.</p>
 </div>
 
-<div class="skill-card reveal" data-icon="✎">
+<div class="skill-card reveal" data-skill-title="Design" data-skill-note="I use design tools to create layouts, posters, branding, and creative assets.">
 <div class="skill-icon">✎</div>
 <h3>Design</h3>
 <p>Canva, Procreate, poster design, branding, and campaign visuals.</p>
 </div>
 
-<div class="skill-card reveal" data-icon="🎬">
+<div class="skill-card reveal" data-skill-title="Media" data-skill-note="I enjoy editing videos and creating motion through different media tools.">
 <div class="skill-icon">🎬</div>
 <h3>Media</h3>
 <p>Adobe After Effects, Video Star, CapCut, and video editing.</p>
 </div>
 
-<div class="skill-card reveal" data-icon="☁">
+<div class="skill-card reveal" data-skill-title="Tools" data-skill-note="I used GitHub to publish the website and organize the final project files.">
 <div class="skill-icon">☁</div>
 <h3>Tools</h3>
 <p>GitHub, Microsoft Office, project presentation, and organization.</p>
 </div>
 
-<div class="skill-card reveal" data-icon="ع">
+<div class="skill-card reveal" data-skill-title="Languages" data-skill-note="I can communicate clearly in Arabic and English.">
 <div class="skill-icon">ع</div>
 <h3>Languages</h3>
 <p>Arabic native speaker and fluent English speaker.</p>
+</div>
+
+</div>
+
+<div class="skill-visual-panel reveal">
+<img src="Maryams%20photos/detail-touch.png" alt="Close-up detail photo">
+
+<div class="skill-visual-caption">
+<h3 id="skill-visual-title">Creative Details</h3>
+<p id="skill-visual-note">Hover over a skill card to see how it connects to my work.</p>
+</div>
 </div>
 
 </div>
@@ -196,7 +205,6 @@ portfolio template.
 
 <div class="project-list">
 
-<!-- Project 1 -->
 <a
 class="project-card reveal active-project"
 href="https://maryammalhashmii-dot.github.io/Assignment1/"
@@ -212,12 +220,11 @@ data-description="A website for my yoga mat business, Solara, designed to presen
 <div class="project-card-text">
 <p class="project-label">Communications Lab</p>
 <h3>30MFF</h3>
-<p>A 30 Minute Film Festival project presented as a simple web experience.</p>
+<p>A website for my yoga mat business, Solara, designed to present the brand in a simple and visual way.</p>
 <span>Open Project ↗</span>
 </div>
 </a>
 
-<!-- Project 2 -->
 <a
 class="project-card reveal"
 href="https://asemaikauas.github.io/fcomics/comic.html"
@@ -238,7 +245,6 @@ data-description="An interactive comic project that uses web layout, images, and
 </div>
 </a>
 
-<!-- Project 3 -->
 <a
 class="project-card reveal"
 href="https://kzeina.github.io/sounds_commslab/index.html"
@@ -259,7 +265,6 @@ data-description="A sound-based storytelling project focused on atmosphere, list
 </div>
 </a>
 
-<!-- Project 4 -->
 <a
 class="project-card reveal"
 href="https://alw1nmathew.github.io/VideoCommsLab/#story"
@@ -282,7 +287,6 @@ data-description="A video storytelling project combining narrative, editing, and
 
 </div>
 
-<!-- Project spotlight updates when hovering over project cards -->
 <aside class="project-spotlight reveal">
 <p class="spotlight-label">Project Spotlight</p>
 <h3 id="spotlight-title">30MFF</h3>
@@ -291,7 +295,7 @@ data-description="A video storytelling project combining narrative, editing, and
 <div class="spotlight-line"></div>
 
 <p id="spotlight-description">
-A 30 Minute Film Festival project presented as a simple web experience built around a short video.
+A website for my yoga mat business, Solara, designed to present the brand in a simple and visual way.
 </p>
 
 <p class="spotlight-tools">Tools: <span id="spotlight-tools">HTML, CSS, Video, Storytelling</span></p>
@@ -312,14 +316,12 @@ A 30 Minute Film Festival project presented as a simple web experience built aro
 
 <div class="connect-grid connect-with-photo">
 
-<!-- Visible decorative image between the two contact boxes -->
 <img
 src="Maryams%20photos/connect-soft.png"
 alt="Maryam decorative photo"
 class="connect-soft-photo"
 />
 
-<!-- Contact links -->
 <div class="connect-card reveal">
 <p>
 I’m always open to sharing ideas, collaborating on creative projects,
@@ -333,7 +335,6 @@ or connecting about web design, storytelling, and interactive media.
 </div>
 </div>
 
-<!-- Message form opens an email draft -->
 <form class="message-box reveal" id="message-form">
 <input id="name" type="text" placeholder="Your name" required />
 <input id="email" type="email" placeholder="Your email" required />
@@ -350,12 +351,11 @@ or connecting about web design, storytelling, and interactive media.
 </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
 <p>Designed and coded by Maryam Alhashmi ✦</p>
 </footer>
 
-<!-- Main JS file -->
-<script src="script.js?v=9"></script>
+<!-- JavaScript file -->
+<script src="script.js?v=10"></script>
 </body>
 </html>
