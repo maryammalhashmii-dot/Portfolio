@@ -474,56 +474,138 @@ color: var(--ink);
 }
 
 /* =========================================
-FIX SKILLS SECTION - REMOVE OLD IMAGE PANEL
+SKILLS SECTION
 ========================================= */
-
-/* Hide the old detail image panel completely */
-.skill-visual-panel,
-.skill-visual-caption {
-display: none !important;
+.compact-skills {
+min-height: 100vh;
+padding-top: 115px;
+padding-bottom: 45px;
 }
 
-/* If the old skills layout is still in the HTML, make it behave normally */
+#skills h2 {
+margin-bottom: 22px;
+}
+
 .skills-layout {
-display: block !important;
-max-width: 1120px;
+max-width: 1160px;
 margin: 0 auto;
+display: grid;
+grid-template-columns: 1.35fr 0.65fr;
+gap: 26px;
+align-items: stretch;
 }
 
-/* Make the skills cards show as a clean grid */
-.skills-grid,
 .skills-grid-compact {
-max-width: 1120px;
-margin: 0 auto;
-display: grid !important;
-grid-template-columns: repeat(3, 1fr);
-gap: 18px;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 16px;
 }
 
-/* Reduce the Skills section height so Projects does not appear awkwardly */
-#skills {
-min-height: auto;
-padding-bottom: 90px;
-}
-
-/* Make sure each skill card is visible and balanced */
 .skill-card {
-min-height: 230px;
+position: relative;
+min-height: 155px;
+border: 2px solid var(--navy);
+padding: 20px;
+border-radius: 22px;
+overflow: hidden;
+transition: 0.35s;
+z-index: 1;
+background: rgba(255, 247, 232, 0.78);
 }
 
-/* Mobile and iPad fix */
-@media (max-width: 900px) {
-.skills-grid,
-.skills-grid-compact {
-grid-template-columns: 1fr !important;
+.skill-card::before {
+content: "";
+position: absolute;
+inset: 100% 0 0 0;
+background: var(--navy);
+transition: 0.35s ease;
+z-index: -1;
 }
 
-#skills {
-padding-bottom: 70px;
-}
+.skill-card:hover::before {
+inset: 0;
 }
 
+.skill-card:hover {
+color: var(--cream);
+transform: translateY(-6px);
+box-shadow: 8px 8px 0 rgba(207, 47, 60, 0.35);
+}
 
+.skill-icon {
+position: absolute;
+right: 18px;
+top: 16px;
+width: 38px;
+height: 38px;
+font-size: 23px;
+line-height: 38px;
+text-align: center;
+font-weight: 800;
+color: rgba(207, 47, 60, 0.35);
+transition: 0.35s;
+}
+
+.skill-card:nth-child(1) .skill-icon {
+font-size: 18px;
+width: 48px;
+}
+
+.skill-card:nth-child(4) .skill-icon,
+.skill-card:nth-child(6) .skill-icon {
+font-size: 20px;
+}
+
+.skill-card:hover .skill-icon {
+color: var(--blush);
+transform: scale(1.06) rotate(-4deg);
+}
+
+.skill-card h3 {
+font-size: 22px;
+margin-bottom: 8px;
+padding-right: 62px;
+}
+
+.skill-card p {
+font-size: 14.5px;
+line-height: 1.45;
+}
+
+.skill-visual-panel {
+border: 2px solid var(--navy);
+border-radius: 26px;
+background: rgba(255, 247, 232, 0.78);
+box-shadow: 9px 9px 0 var(--navy);
+overflow: hidden;
+min-height: 495px;
+max-height: 495px;
+display: flex;
+flex-direction: column;
+}
+
+.skill-visual-panel img {
+width: 100%;
+height: 360px;
+object-fit: cover;
+object-position: center;
+display: block;
+}
+
+.skill-visual-caption {
+padding: 20px;
+}
+
+.skill-visual-caption h3 {
+font-size: 22px;
+color: var(--navy);
+margin-bottom: 8px;
+}
+
+.skill-visual-caption p {
+font-size: 14.5px;
+line-height: 1.45;
+}
 
 /* =========================================
 PROJECTS SECTION
@@ -1002,7 +1084,8 @@ margin-bottom: 28px;
 .hero,
 .about-grid,
 .project-showcase,
-.connect-grid {
+.connect-grid,
+.skills-layout {
 grid-template-columns: 1fr;
 gap: 35px;
 }
@@ -1061,70 +1144,55 @@ font-size: 16px;
 grid-template-columns: 1fr;
 }
 
+.compact-skills {
+min-height: auto;
+padding-top: 120px;
+padding-bottom: 70px;
+}
+
 .skills-grid-compact {
 grid-template-columns: 1fr;
 }
 
 .skill-card {
 min-height: auto;
-padding: 24px;
-}
-
-.skill-icon {
-right: 18px;
-top: 18px;
-width: 38px;
-height: 38px;
-font-size: 23px;
-line-height: 38px;
-}
-
-.skill-card:nth-child(1) .skill-icon {
-font-size: 18px;
-width: 48px;
-}
-
-.skill-card:nth-child(4) .skill-icon,
-.skill-card:nth-child(6) .skill-icon {
-font-size: 21px;
-}
-
-.skill-card h3 {
-padding-right: 72px;
+padding: 22px;
 }
 
 .skill-card:hover {
 transform: none;
-color: var(--ink);
-background: rgba(255, 247, 232, 0.78);
 }
 
-.skill-card::before,
-.skill-card:hover::before {
-inset: auto;
+.skill-visual-panel {
+min-height: auto;
+max-height: none;
 }
 
-.skill-summary,
-.skill-card:hover .skill-summary {
-opacity: 1;
-transform: none;
+.skill-visual-panel img {
+height: 260px;
 }
 
-.skill-hover-content {
-position: static;
-opacity: 1;
-transform: none;
-margin-top: 18px;
+.skill-icon {
+right: 18px;
+top: 16px;
+width: 36px;
+height: 36px;
+font-size: 21px;
+line-height: 36px;
 }
 
-.skill-card:hover .skill-icon {
-color: rgba(207, 47, 60, 0.35);
-transform: none;
+.skill-card:nth-child(1) .skill-icon {
+font-size: 17px;
+width: 46px;
 }
 
-.skill-tags span {
-border-color: var(--navy);
-color: var(--navy);
+.skill-card:nth-child(4) .skill-icon,
+.skill-card:nth-child(6) .skill-icon {
+font-size: 19px;
+}
+
+.skill-card h3 {
+padding-right: 68px;
 }
 
 .project-card {
